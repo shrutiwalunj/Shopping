@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Clothes } from './common/clothes';
+import { RouterModule, Routes} from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
