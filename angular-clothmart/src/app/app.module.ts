@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ClothListComponent } from './components/cloth-list/cloth-list.component';
+import { ClothesCategoryComponent } from './components/clothes-category/clothes-category.component';
+
 import { ClothesService } from './services/clothes.service';
 import { RouterModule, Routes} from '@angular/router';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -18,6 +20,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ClothListComponent,
+    ClothesCategoryComponent,
     PageNotFoundComponent
   ],
   imports: [
