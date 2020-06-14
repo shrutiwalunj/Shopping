@@ -15,4 +15,7 @@ public interface ClothesRespository extends JpaRepository<Clothes,Long>{
 
 	@RestResource(path = "categoryid")
 	Page<Clothes> findByCategoryId(@Param("id") Long id, Pageable pageable);
+
+	@RestResource(path = "searchbykeyword")
+	Page<Clothes> findByNameContaining(@Param("name") String keyword, Pageable pageable);
 }

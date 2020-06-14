@@ -1,4 +1,5 @@
 export class Clothes {
+    id: number;
     sku: string;
     name: string;
     description: string;

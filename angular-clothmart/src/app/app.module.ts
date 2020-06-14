@@ -8,9 +8,15 @@ import { ClothesCategoryComponent } from './components/clothes-category/clothes-
 import { ClothesService } from './services/clothes.service';
 import { RouterModule, Routes} from '@angular/router';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SearchComponent } from './components/search/search.component';
+import { ClothDetailsComponent } from './components/cloth-details/cloth-details.component';
+import {NgxPaginationModule} from 'ngx-pagination'; 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [ 
-  {path: 'clothes' , component : ClothListComponent},
+  {path: 'clothes/:id' , component : ClothDetailsComponent},
+  {path: 'clothes' , component : ClothListComponent}, 
+  {path: 'search/:keyword' , component : ClothListComponent},
   {path: 'category/:id' , component : ClothListComponent},
   {path: '' ,redirectTo : '/clothes' , pathMatch : 'full'},
   {path: '**' , component : PageNotFoundComponent}
@@ -21,15 +27,20 @@ const routes: Routes = [
     AppComponent,
     ClothListComponent,
     ClothesCategoryComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchComponent,
+    ClothDetailsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     HttpClientModule,
+    NgbModule,
+    NgxPaginationModule,
     RouterModule.forRoot(routes)
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    SearchComponent
   ],
   providers: [
     ClothesService
