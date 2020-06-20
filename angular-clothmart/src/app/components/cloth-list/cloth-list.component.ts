@@ -3,6 +3,10 @@ import { Clothes } from 'src/app/common/clothes';
 import { ClothesService } from 'src/app/services/clothes.service';
 import { ActivatedRoute } from '@angular/router';
 import { NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
+import { CartService } from 'src/app/services/cart.service';
+import { CartItem } from 'src/app/common/cart-item';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
   selector: 'app-cloth-list',
@@ -17,18 +21,22 @@ export class ClothListComponent implements OnInit {
   currentCategoryId: number = 1;
   searchMode: Boolean = false;
   previousCategory: number = 1;
-
+  show:boolean;
+  msg: String;
   //new properties for server side paging
   currentPage: number = 1;
-  pageSize: number = 1;
+  pageSize: number = 5;
   totalRecords: number = 0;
 
 
   constructor(private _clothService: ClothesService,
-    private _activatedRoute: ActivatedRoute,
-    _config:NgbPaginationConfig) { 
-      _config.maxSize=3;
-      _config.boundaryLinks  = true;
+              private _activatedRoute: ActivatedRoute,
+              private _cartService: CartService,
+              private _wishlistService: WishlistService,
+              private _spinnerService: NgxSpinnerService,
+               _config:NgbPaginationConfig) { 
+               _config.maxSize=3;
+              _config.boundaryLinks  = true;
     }
 
   ngOnInit(): void {
@@ -39,6 +47,8 @@ export class ClothListComponent implements OnInit {
 
 
   listClothes() {
+    //starts the loader or spinner
+    this._spinnerService.show();
     this.searchMode = this._activatedRoute.snapshot.paramMap.has('keyword');
 
     if (this.searchMode) {
@@ -88,12 +98,35 @@ export class ClothListComponent implements OnInit {
 
   processPaginate() {
     return data => {
+      //stops loader or spinner
+    
+      this._spinnerService.hide();
       this.clothes = data._embedded.clothes;
       //page number starts from 1
       this.currentPage = data.page.number + 1;
       this.totalRecords = data.page.totalElements;
       this.pageSize = data.page.size;
+  
     }
+  }
+
+  addToCart(cloth: Clothes){
+    console.log(`cloth name: ${cloth.name}, and price : ${cloth.unitPrice}`);
+    const cartItem = new CartItem(cloth);
+    this._cartService.addToCart(cartItem);
+
+  }
+  addToWishList(cloth: Clothes){
+    console.log(`cloth name: ${cloth.name}, and price : ${cloth.unitPrice}`);
+    const wishlistItem = new CartItem(cloth);
+   this.show= this._wishlistService.addToWishList(wishlistItem);
+    //message
+   if(this.show == true)
+    this.msg='AlreadyPresent';
+    else
+    this.msg='addedToWishlist';
+
+
   }
   config: Clothes;
 

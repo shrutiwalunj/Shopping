@@ -1,14 +1,8 @@
 <br>
 <div class="row">
 
-    <div class="col-lg-3">
-        <h1 class="my-4"></h1>
-        <app-clothes-category></app-clothes-category>
 
-    </div>
-    <!-- /.col-lg-3 -->
-
-    <div class="col-lg-9">
+    <div class="col-lg-12">
         <div class="row">
             <!-- to display the image -->
             <div class="col-12 col-md-4">
@@ -29,8 +23,18 @@
                 <h4>price: <strong>{{cloth.unitPrice | currency: 'INR'}}</strong></h4>
                 <hr/>
                 <h6>Qty.Available: {{cloth.unitsInStock}}</h6>
-                <a routerLink="/clothes" class="btn btn-success"><i class="fas fa-arrow-left"></i>Back</a>
-                <a href="#" class="btn btn-primary ml-1"><i class="fas fa-cart-arrow-down"></i>Add to cart</a>
+
+                <a class="fa fa-heart text-danger" (click)="addToWishList()" ></a>
+                &nbsp;
+
+                <a routerLink="/clothes" class="btn btn-success">
+                    <i class="fas fa-arrow-left"></i>Back
+                </a>
+                
+
+                <button (click)="addToCart()" class="btn btn-primary ml-1">
+                    <i class="fas fa-cart-arrow-down"></i>Add to cart
+                </button>
             </div>
         </div>
 

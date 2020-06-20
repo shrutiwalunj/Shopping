@@ -1,0 +1,45 @@
+<br>
+<div class="row">
+      
+    <div class="col-md-12">
+
+    <div class="row">
+        <div class="col-md-12">
+           <div *ngIf="wishlistItems.length > 0">
+            <table class="table table-bordered">
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th width="30%">Cloth Image</th>
+                        <th width="70%">Cloth Details</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let wishlistItem of wishlistItems">
+                        <td>
+                            <img [src]="wishlistItem.imageUrl" class="img-responsive" width="100">
+                        </td>
+                        <td>
+                            <p>{{wishlistItem.name}}</p>
+                            <p>{{wishlistItem.unitPrice | currency: 'INR'}}</p>
+                            <p>Quantity :  {{wishlistItem.quantity}}
+                                <!-- remove or trash icon -->
+                                <span (click)="remove(wishlistItem)" class="float-right pointer text-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </span> 
+                            </p>
+                        </td>
+                        
+                    </tr>
+                   
+                </tbody>
+            </table>
+           </div>
+           <div *ngIf="wishlistItems.length == 0" class="alert alert-warning" role="alert">
+            Your wishlist Is Empty
+           </div>
+    </div>
+</div>
+    </div>
+
+</div>
