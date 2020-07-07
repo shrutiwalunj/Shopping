@@ -1,9 +1,51 @@
+<br><br>
+<div class="mybackground">
 <div *ngIf="isLoggedIn; else loggedOut">
-  Logged in as {{roles}}.
+  <h3 class="text-center">User with Username : {{username}} is already logged in..</h3>
+ <div routerLink="/clothes"></div>
 </div>
 
+
 <ng-template #loggedOut>
-  <div class="row col-sm-6" style="max-width:350px;">
+
+  <div class="container ">
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+         #f="ngForm" novalidate>
+          
+            <input type="text"  class="form-control" placeholder="Username" name="username" [(ngModel)]="form.username"
+             #username="ngModel" required autofocus/>
+            <div *ngIf="f.submitted && username.invalid">
+              <div class="text-danger" *ngIf="username.errors.required">Username is required</div>
+            </div>
+            <input type="password"  class="form-control" placeholder="Password" name="password" [(ngModel)]="form.password" 
+            #password="ngModel" required minlength="6" >
+            <div *ngIf="f.submitted && password.invalid">
+              <div class="text-danger" *ngIf="password.errors.required">Password is required</div>
+              <div class="text-danger" *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+            <div id="remember" class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+            <div *ngIf="f.submitted && isLoginFailed"  class="alert alert-danger">
+              Login failed: {{errorMessage}}
+              
+            </div>
+        </form><!-- /form -->
+        <a href="#" class="forgot-password">
+            Forgot the password?
+        </a>
+    </div><!-- /card-container -->
+  </div>
+
+</ng-template>
+</div>
+  <!--<div class="row col-sm-6" style="max-width:350px;">
     <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="form-group">
         <label for="username">Username</label>
@@ -34,4 +76,5 @@
     <p>Don't have an account?</p>
     <a href="signup" routerLink="/register" class="btn btn-success">Sign Up</a>
   </div>
-</ng-template>
+-->
+  
