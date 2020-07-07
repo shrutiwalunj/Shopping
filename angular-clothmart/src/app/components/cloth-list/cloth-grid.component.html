@@ -8,7 +8,6 @@ type="ball-spin-clockwise"
 <p style="font-size: 20px; color: white">Loading...</p>
 </ngx-spinner>
 
-
 <div class="row">
 
 
@@ -28,7 +27,9 @@ type="ball-spin-clockwise"
           </div>
           <div class="card-footer">
             <!--wishlist-->
-            <a  class="fa fa-heart text-danger float-left" (click)="addToWishList(cloth)"></a>
+   
+            <a class="fas fa-heart  float-left" (click)="addToWishList(cloth)"></a>
+           
               <!--cart button -->      
             <button class="btn btn-primary float-right" (click)="addToCart(cloth)">Add to Cart</button>
           </div>

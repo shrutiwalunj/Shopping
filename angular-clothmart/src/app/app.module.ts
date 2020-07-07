@@ -21,9 +21,18 @@ import { FirstpageComponent } from './components/firstpage/firstpage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material/material.module';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
+
+
 
 
 const routes: Routes = [ 
+  {path: 'login' , component : LoginComponent},
+  {path: 'profile' , component : ProfileComponent},
+  {path: 'register' , component : RegisterComponent},
   {path: 'checkout' , component : CheckoutComponent},
   {path: 'wishlist-details' , component : WishlistDetailsComponent},
   {path: 'cart-details' , component : CartDetailsComponent},
@@ -47,7 +56,11 @@ const routes: Routes = [
     CartDetailsComponent,
     CheckoutComponent,
     WishlistDetailsComponent,
-    FirstpageComponent
+    FirstpageComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
+   
   ],
   imports: [
     BrowserModule, 

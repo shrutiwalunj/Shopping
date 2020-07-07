@@ -7,6 +7,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { CartItem } from 'src/app/common/cart-item';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { WishlistService } from 'src/app/services/wishlist.service';
+import { WishlistItem } from 'src/app/common/wishlist-item';
 
 @Component({
   selector: 'app-cloth-list',
@@ -121,13 +122,14 @@ export class ClothListComponent implements OnInit {
     const wishlistItem = new CartItem(cloth);
    this.show= this._wishlistService.addToWishList(wishlistItem);
     //message
-   if(this.show == true)
-    this.msg='AlreadyPresent';
-    else
-    this.msg='addedToWishlist';
-
-
+      
   }
+
+  //remove wishlist item
+  remove(wishlistItem: WishlistItem){
+   this.show = this._wishlistService.remove(wishlistItem);
+  }
+ 
   config: Clothes;
 
 }

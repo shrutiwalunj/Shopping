@@ -18,6 +18,8 @@ export class ClothesService {
 
   constructor(private httpClient: HttpClient) { }
 
+  
+ 
   getClothes(theCategoryId : number, currentPage: number,pageSize: number) : Observable<GetResponseCloth>{
     
       const searchUrl = `${this.baseUrl}/search/categoryid?id=${theCategoryId}&page=${currentPage}&size=${pageSize}`;
@@ -49,6 +51,7 @@ export class ClothesService {
   }
 
 }
+
 interface GetResponseCloth{
   _embedded:{
     clothes:Clothes[];

@@ -15,36 +15,43 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Contact us</a>
         </li>
-
+  
       </ul>
-
+  
       <!-- search component-->
       <app-search></app-search>
-
+  
       <!-- this is for cart status -->
       <div class="ml-auto">
         <app-cart-status></app-cart-status>
       </div>
       &nbsp;&nbsp;
-
+  
       <!--this is for wishlist-->
       <a routerLink="/wishlist-details" class="fa fa-heart text-danger"></a>
       &nbsp;&nbsp;
+  
 
       <!--login and logout button-->
-      <ul class="navbar-nav ">
+      <div class="dropdown navbar-nav">
+        <a class="nav-link dropdown-toggle text-white"  id="dropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Profile
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownProfile">
+          <a class="dropdown-item" routerLink="/profile">My Profile</a>
+          <a class="dropdown-item" routerLink="/login" >Login</a>
+          <a class="dropdown-item" routerLink="/register">Register</a>
+          <a class="dropdown-item"(click)="logout()" >Logout</a>
+        </div>
+      </div>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
-        </li>
-      </ul>
-
-
+    
+     
+           
+     
+  
+  
     </nav>
-
     <!-- Page Content -->
     <div class="container">
 

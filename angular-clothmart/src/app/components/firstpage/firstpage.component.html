@@ -71,10 +71,113 @@ type="ball-spin-clockwise"
     
   </div>  
     <!--carousel section ends-->
+    <h1 class="text-center">Most Popular</h1>
+<div class="row page_nav_row">
+  <div class="col">
+    <div class="page_nav">
+      <div class="d-flex flex-row align-items-start justify-content-center">
+        <h3 class="active"><a [routerLink] ="'/category/'+2">Women</a></h3>&nbsp;
 
+        <h3 class="active"><a [routerLink]="'/category/'+1">Men</a></h3>&nbsp;
 
+        <h3 class="active"><a [routerLink]="'/category/'+3">Kids</a></h3>
 
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a [routerLink] ="'/category/'+2" ><img class="card-img-top img-responsive"  src="../assets/images/clothes/banner-2.jpg"></a>
+            <div class="card-body">
+              <h2 class="card-title text-center">              
+                <a  [routerLink] ="'/category/'+2">WOMEN</a>
+              </h2>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a [routerLink] ="'/category/'+1" ><img class="card-img-top img-responsive"  src="../assets/images/clothes/banner-1.jpg"></a>
+            <div class="card-body">
+              <h2 class="card-title text-center">              
+                <a [routerLink] ="'/category/'+1">MEN</a>
+              </h2>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4" >
+          <div class="card h-100">
+            <a [routerLink] ="'/category/'+3" ><img class="card-img-top img-responsive"  src="../assets/images/clothes/banner-3.jpg"></a>
+            <div class="card-body">
+              <h2 class="card-title text-center">              
+                <a [routerLink] ="'/category/'+3">KIDS</a>
+              </h2>
+              
+            </div>
+          </div>
+        </div>
+  
+      </div>
+
+  
+    </div>
+  </div>
+</div>
   <!-- /.col-lg-9 -->
+  <div class="footer_content">
+    <div class="container">
+      <div class="row">
+        
+       
+        
+
+        <!-- Footer Links -->
+        <div class="col-lg-4 footer_col">
+          <div class="footer_menu">
+            <div class="footer_title">Support</div>
+            <ul class="footer_list">
+              <li>
+                <a href="#"><div>Customer Service<div class="footer_tag_1">online now</div></div></a>
+              </li>
+              <li>
+                <a href="#"><div>Return Policy</div></a>
+              </li>
+              <li>
+                <a href="#"><div>Size Guide<div class="footer_tag_2">recommended</div></div></a>
+              </li>
+              <li>
+                <a href="#"><div>Terms and Conditions</div></a>
+              </li>
+              <li>
+                <a href="#"><div>Contact</div></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Contact -->
+        <div class="col-lg-4 footer_col">
+        
+            
+            <div class="footer_social">
+              <div class="footer_title">Social</div>
+              <ul class="footer_social_list d-flex flex-row align-items-start justify-content-start">
+                <!-- <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> -->
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                <!-- <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li> -->
+                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                <!-- <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li> -->
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </ul>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 <!-- /.row -->

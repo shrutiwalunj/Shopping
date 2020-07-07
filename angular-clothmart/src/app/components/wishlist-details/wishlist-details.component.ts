@@ -31,7 +31,7 @@ export class WishlistDetailsComponent implements OnInit {
    
    this._wishlistService.calculateTotalPrice();
   }
-  //remove cart item
+  //remove wishlist item
   remove(wishlistItem: WishlistItem){
     this._wishlistService.remove(wishlistItem);
   }

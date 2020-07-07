@@ -16,7 +16,7 @@ export class WishlistService {
 
   constructor() { }
 
-  addToWishList(theWishlistItem: CartItem) {
+  addToWishList(theWishlistItem: CartItem) : boolean{
     //check whether the item is already in the wishlist
     let alreadyExistsInWishlist: boolean = false;
     let existingWishlistItem: CartItem = undefined;
@@ -33,12 +33,13 @@ export class WishlistService {
       this.show = true;
       
     } else {
-      //add item to the array
+      this.show = false;
       this.wishlist.push(theWishlistItem);
     }
+    this.calculateTotalPrice();
     return this.show;
 
-    this.calculateTotalPrice();
+    
   }
   calculateTotalPrice() {
     let totalPriceValue: number=0;
@@ -57,12 +58,16 @@ export class WishlistService {
     
   }
    //remove method
-   remove(wishlistItem:CartItem){
+   remove(wishlistItem:CartItem): boolean{
     const itemIndex = this.wishlist.findIndex(tempwishlistItem => tempwishlistItem.id === wishlistItem.id);
  
     if(itemIndex >-1){
       this.wishlist.splice(itemIndex,1);
       this.calculateTotalPrice();
     }
+    this.show = false;
+    return this.show;
    }
+
+   
 }
