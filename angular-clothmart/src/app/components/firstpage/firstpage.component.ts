@@ -32,12 +32,9 @@ export class FirstpageComponent implements OnInit {
     private _activatedRoute: ActivatedRoute,
     private _cartService: CartService,
       private _spinnerService: NgxSpinnerService,
-     ) {
-    
-      }
+     ) {}
 
   ngOnInit(): void {
-   
   this.listClothCategory();
   this.handleListClothes();
   }

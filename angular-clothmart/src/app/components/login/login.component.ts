@@ -18,21 +18,33 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   username: string;
   private loginInfo: AuthLoginInfo;
+  roles: string[];
+  authority: string;
+  info: { token: any; username: any; authorities: any; };
 
   constructor(private authService: AuthService, 
     private tokenStorage: TokenStorageService,
     private route:Router) { }
 
   ngOnInit() {
+    
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.username = this.tokenStorage.getUsername();
     }
+
+    this.info = {
+      token: this.tokenStorage.getToken(),
+      username: this.tokenStorage.getUsername(),
+      authorities: this.tokenStorage.getAuthorities()
+    };
   }
+
+  
 
   onSubmit() {
     console.log(this.form);
-
+   
     this.loginInfo = new AuthLoginInfo(
       this.form.username,
       this.form.password);
@@ -47,8 +59,22 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = true;
         this.username = this.tokenStorage.getUsername();
 
-        this.route.navigate(['/clothes']);
-        alert("login sucessfull");
+        if (this.tokenStorage.getToken()) {
+          this.roles = this.tokenStorage.getAuthorities();
+          this.roles.every(role => {
+            if (role === 'ROLE_ADMIN') {
+               this.authority = 'admin';
+               this.route.navigate(['/admin']);
+                } 
+             else{
+              this.authority = 'user';
+              this.route.navigate(['/clothes']);
+
+             }
+           
+          });
+        }
+        this.tokenStorage.reloadPage();
 
       },
       error => {
@@ -60,7 +86,5 @@ export class LoginComponent implements OnInit {
   }
 
 
-  reloadPage() {
-    window.location.reload();
-  }
+ 
 }

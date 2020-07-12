@@ -1,8 +1,11 @@
 <br><br>
 <div class="mybackground">
 <div *ngIf="isLoggedIn; else loggedOut">
-  <h3 class="text-center">User with Username : {{username}} is already logged in..</h3>
- <div routerLink="/clothes"></div>
+  <h3 class="text-center"><strong>User with Username : {{username}} is already logged in..</strong> <br>
+    <button class="text-center" routerLink="/profile" >Go to your Profile</button>
+    <button class="text-center" routerLink="/clothes" >Home Page</button>
+  </h3>
+
 </div>
 
 
@@ -14,7 +17,7 @@
         <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin" name="form" (ngSubmit)="f.form.valid && onSubmit()"
          #f="ngForm" novalidate>
-          
+        
             <input type="text"  class="form-control" placeholder="Username" name="username" [(ngModel)]="form.username"
              #username="ngModel" required autofocus/>
             <div *ngIf="f.submitted && username.invalid">
@@ -45,36 +48,4 @@
 
 </ng-template>
 </div>
-  <!--<div class="row col-sm-6" style="max-width:350px;">
-    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
-          required />
-        <div *ngIf="f.submitted && username.invalid">
-          <div *ngIf="username.errors.required">Username is required</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
-          required minlength="6" />
-        <div *ngIf="f.submitted && password.invalid">
-          <div *ngIf="password.errors.required">Password is required</div>
-          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" >Login</button>
-        <div *ngIf="f.submitted && isLoginFailed"  class="alert alert-danger">
-          Login failed: {{errorMessage}}
-          
-        </div>
-      </div>
-    </form>
-    <hr />
-    <p>Don't have an account?</p>
-    <a href="signup" routerLink="/register" class="btn btn-success">Sign Up</a>
-  </div>
--->
-  
+ 

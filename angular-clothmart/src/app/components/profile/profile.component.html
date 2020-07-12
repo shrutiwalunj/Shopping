@@ -1,29 +1,32 @@
-<div class="well">
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>&nbsp;
-        <li><a href="#profile" data-toggle="tab">Password</a></li>
-    </ul>
-    <div id="myTabContent" class="tab-content">
-        <div class="tab-pane active in" id="home">
-            <form id="tab">
-                <strong>Username:</strong> {{info.username}}<br/>
-                <strong>Roles:</strong> {{info.authorities}}<br />
-               
-               
-                <br>
-               
-                <div>
-                    <button class="btn btn-primary">Update</button>
+<br> <br>
+    <div class="background"> <br> 
+        <h1 class="text-center text-dark">Welcome!</h1>
+        <div class="container">
+
+            <div class="card card-container">
+
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active in " id="home">
+                        <form id="tab">
+                            <h3 class="text-center text-dark"><strong>Username:</strong> {{info.username}} </h3> <br> 
+                            
+                            <h3 class="text-center text-dark"><strong>Role:</strong> {{info.authorities}} </h3>
+                        </form>
+                    </div>
                 </div>
-            </form>
+
+            </div>
+     
+            <a *ngIf="authority === 'admin'" >
+                <button class="btn btn-primary" routerLink="/addClothes">Add Products</button>
+            </a>
+            &nbsp;
+            <a *ngIf="authority === 'admin'" >
+                <button class="btn btn-primary ml-4" routerLink="/admin">Manage Products</button>
+            </a>
+                    
         </div>
-        <div class="tab-pane fade" id="profile">
-            <form id="tab2">
-                <label>New Password</label>
-                <input type="password" class="input-xlarge">
-                <div>
-                    <button class="btn btn-primary">Update</button>
-                </div>
-            </form>
-        </div>
+
     </div>
+    
+    

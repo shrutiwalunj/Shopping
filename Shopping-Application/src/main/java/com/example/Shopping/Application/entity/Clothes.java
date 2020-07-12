@@ -10,6 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -40,7 +44,9 @@ public class Clothes {
 	@Column(name="last_updated")
 	private Date updatedOn;
 	
-	
+	public Clothes() {
+		
+	}
 	public long getId() {
 		return id;
 	}
@@ -151,8 +157,25 @@ public class Clothes {
 	}
 
 
+	public Clothes(long id, String sku, String name, String description, BigDecimal unitPrice, String imageUrl,
+			boolean active, int unitsInStock, Date createdOn, Date updatedOn) {
+		super();
+		this.id = id;
+		this.sku = sku;
+		this.name = name;
+		this.description = description;
+		this.unitPrice = unitPrice;
+		this.imageUrl = imageUrl;
+		this.active = active;
+		this.unitsInStock = unitsInStock;
+		this.createdOn = createdOn;
+		this.updatedOn = updatedOn;
+	}
+
+
 	@ManyToOne
 	@JoinColumn(name="category_id",nullable=false)
+	 @JsonBackReference
 	private Category category;
 	
 	

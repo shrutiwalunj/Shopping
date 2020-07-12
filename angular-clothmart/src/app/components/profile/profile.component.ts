@@ -7,15 +7,32 @@ import { TokenStorageService } from 'src/app/auth/token-storage.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  public roles: string[];
+  public authority: string;
   info: any;
-  constructor(private token: TokenStorageService) { }
+  constructor(private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
     this.info = {
-      token: this.token.getToken(),
-      username: this.token.getUsername(),
-      authorities: this.token.getAuthorities()
+      token: this.tokenStorage.getToken(),
+      username: this.tokenStorage.getUsername(),
+      authorities: this.tokenStorage.getAuthorities()
     };
-  }
 
+    if (this.tokenStorage.getToken()) {
+      this.roles = this.tokenStorage.getAuthorities();
+      this.roles.every(role => {
+        if (role === 'ROLE_ADMIN') {
+          this.authority = 'admin';
+          return false;
+        } else if(role === 'ROLE_USER') 
+        {
+          this.authority = 'user';
+          return false;
+        }
+       else 
+       return true;
+      });
+    }
+  }
 }

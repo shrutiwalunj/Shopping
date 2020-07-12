@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -26,6 +28,10 @@ public class Category {
 	
 	@Column(name="category_name")
 	private String categoryname;
+	public Category() {
+		
+	}
+
 	
 	public long getId() {
 		return id;
@@ -51,6 +57,14 @@ public class Category {
 		this.clothes = clothes;
 	}
 
+	public Category(long id, String categoryname) {
+		super();
+		this.id = id;
+		this.categoryname = categoryname;
+		
+	}
+
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="category")
+	 @JsonManagedReference
 	private Set<Clothes> clothes;
 }

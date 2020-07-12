@@ -32,185 +32,281 @@
     text-shadow: 0 1px 2px rgba(0,0,0,.6);
   }
 
-  
-  .footer
-  {
-    display: block;
-    width: 100%;
-    background: #f8f8f8;
-  }
-  .footer_content
-  {
-    padding-bottom: 37px;
+  .footer_widgets {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   
-  .footer_about_text
-  {
-    margin-top: 24px;
-    padding-right: 50px;
+  .footer_bg {
+    background: #ededed;
   }
-  .footer_menu
-  {
-    margin-top: 42px;
-    padding-top: 64px;
+  
+  .footer_bg .footer_widgets {
+    border: none;
   }
-  .footer_title
-  {
-    font-size: 36px;
-    font-weight: 700;
-    color: #4a4a4a;
-    line-height: 0.75;
+  
+  .f_w_title {
+    padding-bottom: 30px;
   }
-  .footer_list
-  {
-    display: block;
-    width: 100%;
-    margin-top: 29px;
-  }
-  .footer_list li
-  {
-    width: 100%;
-    position: relative;
-    height: 60px;
-  }
-  .footer_list li:not(:last-of-type)
-  {
-    border-bottom: solid 2px #eeeeee;
-  }
-  .footer_list li a
-  {
-    display: block;
-    position: relative;
+  
+  .f_w_title h3 {
     font-size: 18px;
-    color: #4a4a4a;
-    line-height: 58px;
-  }
-  .footer_list li a:hover
-  {
-    color: #2fce98;
-  }
-  .footer_list li a > div::after
-  {
-    display: block;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    left: 0;
-    font-family: 'FontAwesome';
-    content: '\f054';
-    font-size: 11px;
-    color: #969696;
-  }
-  .footer_list li a:hover > div::after
-  {
-    color: #2fce98;
-  }
-  .footer_list li a > div
-  {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #0b1033;
+    position: relative;
     display: inline-block;
-    padding-left: 22px;
+    padding-bottom: 15px;
   }
-  .footer_list li a > div > div
-  {
-    display: block;
+  
+  .f_w_title h3:before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #cccccc;
     position: absolute;
-    top: 0;
-    white-space: nowrap;
-    font-size: 10px;
-    color: #FFFFFF;
-    line-height: 0.75;
-    text-transform: uppercase;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 4px;
-    padding-right: 4px;
-    border-radius: 6px;
-    margin-top: 10px;
+    left: 0px;
+    bottom: 0px;
   }
   
-  
-  
-  .footer_social
-  {
-    margin-top: 42px;
-    padding-top: 64px;
-  }
-  .footer_social_list
-  {
-    margin-top: 41px;
-  }
-  .footer_social_list li
-  {
-    width: 53px;
-    height: 53px;
-    border-radius: 50%;
-    border: solid 2px #6d6d6d;
-    -webkit-transition: all 400ms ease;
-    -moz-transition: all 400ms ease;
-    -ms-transition: all 400ms ease;
-    -o-transition: all 400ms ease;
-    transition: all 400ms ease;
-  }
-  .footer_social_list li:not(:last-of-type)
-  {
-    margin-right: 17px;
-  }
-  .footer_social_list li a
-  {
-    display: block;
-    width: 100%;
-    height: 100%;
+  .f_about_widget {
     text-align: center;
-    -webkit-transition: all 400ms ease;
-    -moz-transition: all 400ms ease;
-    -ms-transition: all 400ms ease;
-    -o-transition: all 400ms ease;
-    transition: all 400ms ease;
   }
-  .footer_social_list li a i
-  {
-    line-height: 49px;
-    color: #6d6d6d;
-    font-size: 24px;
-    -webkit-transition: all 400ms ease;
-    -moz-transition: all 400ms ease;
-    -ms-transition: all 400ms ease;
-    -o-transition: all 400ms ease;
-    transition: all 400ms ease;
+  
+  .f_about_widget p {
+    font-size: 12.98px;
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+    color: #999999;
+    line-height: 25.95px;
+    letter-spacing: .3245px;
+    max-width: 270px;
+    margin: auto;
+    padding: 30px 0px 15px 0px;
   }
-  .footer_social_list li:hover
-  {
-    border-color: #2fce98;
-    transform: translateY(-5px);
+  
+  .f_about_widget h6 {
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #0b1033;
+    display: inline-block;
   }
-  .footer_social_list li a:hover i
-  {
-    color: #2fce98;
+  
+  .f_about_widget ul {
+    display: inline-block;
+    
   }
-  .footer_bar
-  {
-    width: 100%;
-    border-top: solid 2px #d5d5d5;
+  
+  .f_about_widget ul li {
+    display: inline-block;
+    margin-left: 10px;
+    
   }
-  .footer_bar_content
-  {
-    height: 74px;
+  
+  .f_about_widget ul li a {
+    font-size: 14px;
+    color: #0b1033;
+    -webkit-transition: all 400ms linear 0s;
+    -o-transition: all 400ms linear 0s;
+    transition: all 400ms linear 0s;
+    
   }
-  .footer_nav ul li:not(:last-of-type)
-  {
-    margin-right: 37px;
+  
+  .f_about_widget ul li:first-child {
+    margin-left: 8px;
   }
-  .footer_nav ul li a
-  {
-    font-size: 16px;
+  
+  .f_about_widget ul li:hover a {
+    color: #d91522;
+  }
+  
+  .f_about_widget h5 {
+    font-size: 13px;
+    color: #999999;
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+    padding-top: 12px;
+  }
+  
+  .f_about_widget h5 a {
+    color: #0b1033;
+    font-weight: 600;
+  }
+  
+  .link_widget ul li a {
+    font-size: 13px;
+    line-height: 30px;
+    font-family: "Poppins", sans-serif;
+    color: #797b7b;
     font-weight: 400;
-    color: #4a4a4a;
+    -webkit-transition: all 400ms linear 0s;
+    -o-transition: all 400ms linear 0s;
+    transition: all 400ms linear 0s;
   }
-  .footer_nav ul li a:hover
-  {
-    color: #2fce98;
+  
+  .link_widget ul li:hover a {
+    color: #d91522;
   }
+  
+  .f_extra_widget {
+    padding-left: 30px;
+  }
+  
+  .footer_copyright {
+    text-align: center;
+    padding: 16.5px 0px;
+  }
+  
+  .footer_copyright h5 {
+    font-size: 13px;
+    color: #999999;
+    font-family: "Poppins", sans-serif;
+  }
+  .background{
+    background-color: lightgoldenrodyellow;
+  }
+  
+  .footer_copyright h5 a {
+    color: #0b1033;
+    -webkit-transition: all 400ms linear 0s;
+    -o-transition: all 400ms linear 0s;
+    transition: all 400ms linear 0s;
+  }
+  
+  .footer_copyright h5 a:hover {
+    color: #d91522;
+  }
+
+
+  /* Parallax Footer Area css
+============================================================================================ */
+.footer_copy_area {
+position: absolute;
+left: 0px;
+bottom: 27px;
+width: 100%;
+padding: 0px 80px;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+}
+
+.footer_copy_area .left_text {
+display: -webkit-inline-box;
+display: -ms-inline-flexbox;
+display: inline-flex;
+width: 50%;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: normal;
+-ms-flex-direction: row;
+flex-direction: row;
+}
+
+.footer_copy_area .left_text h5 {
+font-size: 13px;
+color: #999999;
+font-family: "Poppins", sans-serif;
+}
+
+.footer_copy_area .left_text h5 a {
+color: #000;
+font-weight: bold;
+}
+
+.footer_copy_area .middle_text {
+display: -webkit-inline-box;
+display: -ms-inline-flexbox;
+display: inline-flex;
+float: none;
+width: 200px;
+}
+
+.footer_copy_area .middle_text p {
+font-size: 13px;
+font-family: "Poppins", sans-serif;
+color: #999999;
+white-space: nowrap;
+}
+
+.footer_copy_area .right_text {
+display: -webkit-inline-box;
+display: -ms-inline-flexbox;
+display: inline-flex;
+width: 50%;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: reverse;
+-ms-flex-direction: row-reverse;
+flex-direction: row-reverse;
+}
+
+.footer_social li {
+display: inline-block;
+margin-left: 15px;
+}
+
+.footer_social li a {
+font-size: 14px;
+color: #0b1033;
+-webkit-transition: all 400ms linear 0s;
+-o-transition: all 400ms linear 0s;
+transition: all 400ms linear 0s;
+}
+
+.footer_social li:first-child {
+margin-left: 8px;
+}
+
+.footer_social li:hover a {
+color: #d91522;
+}
+
+#fp-nav {
+right: 32px !important;
+}
+
+#fp-nav ul li {
+height: 15px;
+width: 15px;
+margin: 0px;
+margin-bottom: 10px;
+}
+
+#fp-nav ul li a span {
+background: #d9d9d9;
+height: 10px;
+width: 10px;
+margin: -2px 0 0 -4px;
+border-radius: 50%;
+-webkit-transition: all 400ms linear 0s;
+-o-transition: all 400ms linear 0s;
+transition: all 400ms linear 0s;
+}
+
+#fp-nav ul li a.active span {
+background: #d91522;
+height: 15px;
+width: 15px;
+}
+
+#fp-nav ul li a:hover span {
+margin: -2px 0 0 -4px !important;
+}
+
+#fp-nav ul li:last-child {
+margin-bottom: 0px;
+}
+
+.border_none .footer_widgets {
+border-top: none;
+}
+
+.box_footer {
+background: #fff;
+}
+
+.box_footer .footer_widgets {
+border: none;
+}

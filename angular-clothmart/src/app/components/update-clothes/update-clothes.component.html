@@ -1,0 +1,76 @@
+<br><br>
+<div class="mybackground">
+  <div class="container ">
+    <div class="row">
+    <div class="col-md-6 col-sm-6 middle">
+      
+      <h1 class="text-center text-dark">Clothes Information</h1>
+      <div class="card card-container">
+        <img [src]="Cloth.imageurl" class="img-responsive" width="150">
+        <h3>
+         <strong> Sku :</strong> {{Cloth.sku}}<br>
+         <strong> Name :</strong>{{Cloth.name}}<br>
+          <strong>Description : </strong>{{Cloth.description}}<br>
+            <strong> Units In Stock : </strong>{{Cloth.unitsInStock}}<br>
+              <strong>Price : </strong>{{Cloth.unitPrice}}<br>
+        </h3>
+        
+        
+      </div><!-- /card-container -->
+    </div>
+    <div class=" col-sm-6 middle pull-right">
+
+      <h1 class="text-center text-dark">Update Clothes</h1>
+      <div class="card card-container">
+        <p id="profile-name" class="profile-name-card"></p>
+        <form #update="ngForm" class="form-signin" (ngSubmit)="updateProducts()">
+
+          <div class="form-group">
+            <label for="name">sku</label>
+            <input type="text" value="{{Cloth.sku}}" class="form-control" name="sku" [(ngModel)]="clothes.sku" />
+
+          </div>
+          <div class="form-group">
+            <label for="name">Select Category</label><br>
+            <select [(ngModel)]="selected" name="category">
+              <option *ngFor="let cat of category" [value]="cat.id">{{cat.categoryname}}</option>
+            </select>
+
+          </div>
+          <div class="form-group">
+            <label for="name">Cloth Name</label>
+            <input type="text" class="form-control" value="{{Cloth.name}}" name="name" [(ngModel)]="clothes.name" />
+
+          </div>
+          <div class="form-group">
+            <label for="username">description</label>
+            <input type="text" class="form-control" value="{{Cloth.description}}" name="description" [(ngModel)]="clothes.description" required />
+          </div>
+          <div class="form-group">
+            <label for="email">units in stock</label>
+            <input type="text" class="form-control" value="{{Cloth.unitsInStock}}" name="unitsInStock" [(ngModel)]="clothes.unitsInStock" />
+
+          </div>
+          <div class="form-group">
+            <label for="password">Price</label>
+            <input type="text" class="form-control" value="{{Cloth.unitPrice}}" name="price" [(ngModel)]="clothes.unitPrice" />
+
+          </div>
+
+          <div class="form-group">
+            <label for="name">image</label>
+            <input type="text" class="form-control" value="{{Cloth.imageurl}}" name="image" [(ngModel)]="clothes.imageurl" />
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary">Update Product</button>
+
+          </div>
+
+        </form><!-- /form -->
+
+      </div><!-- /card-container -->
+    </div>
+  </div>
+  </div>
+</div>

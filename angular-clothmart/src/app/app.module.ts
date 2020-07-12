@@ -20,17 +20,20 @@ import { WishlistDetailsComponent } from './components/wishlist-details/wishlist
 import { FirstpageComponent } from './components/firstpage/firstpage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
-
-
-
+import { AdminInterfaceComponent } from './components/admin-interface/admin-interface.component';
+import { AddClothesComponent } from './components/add-clothes/add-clothes.component';
+import { UpdateClothesComponent } from './components/update-clothes/update-clothes.component';
 
 
 const routes: Routes = [ 
   {path: 'login' , component : LoginComponent},
+  {path: 'admin' , component : AdminInterfaceComponent},
+  {path: 'update' , component : UpdateClothesComponent},
+
+  {path: 'addClothes' , component : AddClothesComponent},
   {path: 'profile' , component : ProfileComponent},
   {path: 'register' , component : RegisterComponent},
   {path: 'checkout' , component : CheckoutComponent},
@@ -59,8 +62,11 @@ const routes: Routes = [
     FirstpageComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
-   
+    ProfileComponent,
+    AdminInterfaceComponent,
+    AddClothesComponent,
+    UpdateClothesComponent
+    
   ],
   imports: [
     BrowserModule, 
@@ -71,12 +77,12 @@ const routes: Routes = [
    NgxSpinnerModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    MaterialModule,
     FormsModule
   ],
   exports: [
     RouterModule,
-    SearchComponent
+    SearchComponent,
+    FormsModule
   ],
   providers: [
     ClothesService

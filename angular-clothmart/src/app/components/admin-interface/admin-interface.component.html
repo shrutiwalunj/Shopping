@@ -1,0 +1,52 @@
+<p>admin </p>
+<a routerLink="/addClothes">add clothes</a>
+<br>
+<div class="row">
+
+
+    <div class="col-md-12">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div *ngIf="clothes.length > 0">
+                    <table class="table table-bordered">
+                        <thead class="bg-dark text-light">
+                            <tr>
+                                <th width="10%">Cloth Id</th>
+                                <th width="20%">Cloth Image</th>
+                                <th width="50%">Cloth Details</th>
+                                <th width="20%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let cloth of clothes">
+                                <td>
+                                    <p>{{cloth.id}}</p>
+                                </td>
+                                <td>
+                                    <img [src]="cloth.imageurl" class="img-responsive" width="70">
+                                </td>
+                                <td>
+                                    <p>{{cloth.name}}</p>
+                                    <p>{{ cloth.unitPrice | currency: 'INR'}}</p>
+                                </td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a (click)="update(cloth.id)">Update</a> 
+                                            <a (click)="removeCloth(cloth.id)" class="fas fa-trash-alt text-danger float-right"></a>
+                                          
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

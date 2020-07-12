@@ -18,7 +18,6 @@ export class ClothesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  
  
   getClothes(theCategoryId : number, currentPage: number,pageSize: number) : Observable<GetResponseCloth>{
     

@@ -5,9 +5,9 @@ export class Clothes {
     description: string;
     unitPrice: number;
     imageurl: string;
-    active: boolean;
+    active: boolean = true;
     unitsInStock: number;
-    createdOn: Date;
-    updatedOn: Date;
-
+    createdOn: Date = new Date();
+    updatedOn: Date = null;
+    constructor(){}
 }
